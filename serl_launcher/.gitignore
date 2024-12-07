@@ -5,3 +5,7 @@ __pycache__
 *.so
 *.pyc
 wandb/
+*.jpg
+*.pkl
+*.png
+*.pyc
