@@ -46,7 +46,8 @@ flags.DEFINE_string("checkpoint_path", None, "Path to save checkpoints.")
 flags.DEFINE_integer("eval_checkpoint_step", 0, "Step to evaluate the checkpoint.")
 flags.DEFINE_integer("eval_n_trajs", 0, "Number of trajectories to evaluate.")
 flags.DEFINE_boolean("save_video", False, "Save video.")
-
+flags.DEFINE_boolean("use_tactile", False, "Use tactile.")
+flags.DEFINE_boolean("tactile_pretrain", False, "Tactile pretrain.")
 flags.DEFINE_boolean(
     "debug", False, "Debug mode."
 )  # debug mode will disable wandb logging
@@ -382,6 +383,8 @@ def main(_):
             seed=FLAGS.seed,
             sample_obs=env.observation_space.sample(),
             sample_action=env.action_space.sample(),
+            use_tactile=FLAGS.use_tactile,
+            tactile_pretrain=FLAGS.tactile_pretrain,
             image_keys=config.image_keys,
             encoder_type=config.encoder_type,
             discount=config.discount,
@@ -392,6 +395,8 @@ def main(_):
             seed=FLAGS.seed,
             sample_obs=env.observation_space.sample(),
             sample_action=env.action_space.sample(),
+            use_tactile=FLAGS.use_tactile,
+            tactile_pretrain=FLAGS.tactile_pretrain,
             image_keys=config.image_keys,
             encoder_type=config.encoder_type,
             discount=config.discount,
@@ -402,6 +407,8 @@ def main(_):
             seed=FLAGS.seed,
             sample_obs=env.observation_space.sample(),
             sample_action=env.action_space.sample(),
+            use_tactile=FLAGS.use_tactile,
+            tactile_pretrain=FLAGS.tactile_pretrain,
             image_keys=config.image_keys,
             encoder_type=config.encoder_type,
             discount=config.discount,

@@ -554,6 +554,7 @@ class SACAgentHybridDualArm(flax.struct.PyTreeNode):
         rng: PRNGKey,
         observations: Data,
         actions: jnp.ndarray,
+        use_tactile: bool = True,
         # Model architecture
         encoder_type: str = "resnet-pretrained",
         use_proprio: bool = False,

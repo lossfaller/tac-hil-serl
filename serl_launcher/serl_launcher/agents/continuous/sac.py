@@ -436,6 +436,8 @@ class SACAgent(flax.struct.PyTreeNode):
         rng: PRNGKey,
         observations: Data,
         actions: jnp.ndarray,
+        use_tactile: bool = True,
+        tactile_pretrain: bool = True,
         # Model architecture
         encoder_type: str = "resnet-pretrained",
         use_proprio: bool = False,
